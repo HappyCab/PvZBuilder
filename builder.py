@@ -50,9 +50,12 @@ class Tile:
 
         match tileType:
             case "g":
-                filename = "grass01.png"
+                if (self.x + self.y) % 2 == 0: filename = "grass01.png"
+                else: filename = "grass02.png"
+                
             case "w":
-                filename = "water01.png"
+                if (self.x + self.y) % 2 == 0: filename = "water01.png"
+                else: filename = "water02.png"
             case _:
                 raise ValueError("Error! Tile Type: ", tileType)
 
